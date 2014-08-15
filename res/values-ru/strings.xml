@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TempMail</string>
+
+    <!-- Activity main menu -->
+    <string name="refresh">Обновить</string>
+    <string name="share">Поделится адресом</string>
+    <string name="copy_clip">Копировать адрес</string>
+    <string name="change_email">Сменить email</string>
+    <string name="about">О программе</string>
+
+    <!-- Activity message menu -->
+    <string name="properties">Свойства</string>
+
+    <!-- Activity main -->
+    <string name="no_message">Сообщений нет</string>
+    <string name="copied">Email адрес успешно скопирован в буфер обмена</string>
+
+    <!-- Activity message -->
+    <string name="from">От:</string>
+    <string name="subject">Тема:</string>
+    <string name="time">Время:</string>
+
+    <!-- Share -->
+    <string name="share_via">Поделится через</string>
+
+    <!-- About dialog -->
+    <string name="close">Закрыть</string>
+
+</resources>

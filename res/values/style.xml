@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar" >
+        <item name="android:actionBarStyle">@style/ActionBar.MyStyle</item>
+        <item name="actionBarStyle">@style/ActionBar.MyStyle</item>
+        <item name="android:actionButtonStyle">@style/ActionButton.MyStyle</item>
+        <item name="actionButtonStyle">@style/ActionButton.MyStyle</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+    </style>
+    <style name="ActionButton.MyStyle" parent="@style/Widget.AppCompat.ActionButton">
+
+    </style>
+    <style name="ActionBar.MyStyle" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@color/dark_blue</item>
+        <item name="backgroundStacked">@color/dark_blue</item>
+        <item name="backgroundSplit">@color/dark_blue</item>
+        <item name="android:background">@color/dark_blue</item>
+        <item name="android:backgroundStacked">@color/dark_blue</item>
+        <item name="android:backgroundSplit">@color/dark_blue</item>
+    </style>
+</resources>

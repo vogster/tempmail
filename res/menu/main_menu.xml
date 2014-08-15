@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res/com.unlogicon.tempmail">
+    <item
+            android:id="@+id/action_refresh"
+            app:showAsAction="always"
+            android:title="@string/refresh"
+            android:icon="@drawable/ic_menu_refresh"
+            android:alphabeticShortcut="r"
+            android:orderInCategory="1"
+            />
+    <item
+            android:id="@+id/action_share"
+            app:showAsAction="never"
+            android:title="@string/share"
+            android:alphabeticShortcut="s"
+            android:orderInCategory="2"
+            />
+    <item
+            android:id="@+id/action_copy"
+            app:showAsAction="never"
+            android:title="@string/copy_clip"
+            android:alphabeticShortcut="c"
+            android:orderInCategory="2"
+            />
+    <item
+            android:id="@+id/action_change"
+            app:showAsAction="never"
+            android:title="@string/change_email"
+            android:alphabeticShortcut="e"
+            android:orderInCategory="2"
+            />
+    <item
+            android:id="@+id/action_about"
+            app:showAsAction="never"
+            android:title="@string/about"
+            android:alphabeticShortcut="a"
+            android:orderInCategory="2"
+            />
+</menu>
