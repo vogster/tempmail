@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="emailDomains">
-        <item>alivance.com</item>
-        <item>walkmail.net</item>
-        <item>lackmail.net</item>
-        <item>bigprofessor.so</item>
+        <item>flurred.com</item>
+        <item>lastmail.co</item>
+        <item>landmail.co</item>
     </string-array>
 </resources>
