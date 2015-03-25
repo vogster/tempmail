@@ -41,7 +41,10 @@ public class ActivityMessage extends ActionBarActivity {
 
         getSupportActionBar().setTitle(message.getMailSubject());
         getSupportActionBar().setSubtitle(getString(R.string.from) + " " + message.getMailFrom());
-        text.loadData(message.getMailHtml(), "text/html; charset=UTF-8", null);
+        if (!message.getMailHtml().equals(""))
+            text.loadData(message.getMailHtml(), "text/html; charset=UTF-8", null);
+        else
+            text.loadData(message.getMailText(), "text/html; charset=UTF-8", null);
 
         Utils.addMenuButton(this);
 
