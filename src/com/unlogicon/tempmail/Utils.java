@@ -90,6 +90,18 @@ public class Utils {
         return sb.toString() + "@" + array[random.nextInt(array.length)];
     }
 
+    public static String generateRandomString(Activity activity){
+        char[] chars = "abcdefghijklmnopqrstuvwxyz1234567890".toCharArray();
+        String[] array = activity.getResources().getStringArray(R.array.emailDomains);
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i < random.nextInt(10) + 4; i++) {
+            char c = chars[random.nextInt(chars.length)];
+            sb.append(c);
+        }
+        return sb.toString();
+    }
+
     public static void shareEmail(Activity activity, String email) {
         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
         sharingIntent.setType("text/plain");

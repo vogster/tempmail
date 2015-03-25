@@ -27,4 +27,13 @@
     <!-- About dialog -->
     <string name="close">Close</string>
 
+    <!-- Change email dialog -->
+    <string name="cancel">Cancel</string>
+    <string name="Ok">Ok</string>
+    <string name="create">Create</string>
+    <string name="title_dialog">Change email</string>
+    <string name="description_dialog">To change the email address, please enter the desired E-mail address.</string>
+    <string name="login">Login</string>
+    <string name="domine">Domine</string>
+
 </resources>

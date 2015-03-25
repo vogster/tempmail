@@ -26,5 +26,12 @@
 
     <!-- About dialog -->
     <string name="close">Закрыть</string>
+    <string name="Ok">Ok</string>
+    <string name="cancel">Закрыть</string>
+    <string name="create">Создать</string>
+    <string name="description_dialog">Для смены адреса, пожалуйста, введите в поле Логин желаемый логин и выберите понравившийся домен или оставьте сгенерированный вариант.</string>
+    <string name="domine">Домен</string>
+    <string name="login">Логин</string>
+    <string name="title_dialog">Сменить почтовый адрес</string>
 
 </resources>
