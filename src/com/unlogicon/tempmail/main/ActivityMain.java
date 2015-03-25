@@ -2,6 +2,7 @@ package com.unlogicon.tempmail.main;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
 
 import static com.unlogicon.tempmail.UtilsApi.getCallBack;
 
-public class ActivityMain extends ActionBarActivity {
+public class ActivityMain extends ActionBarActivity implements SwipeRefreshLayout.OnRefreshListener {
     /**
      * Called when the activity is first created.
      */
@@ -36,8 +37,9 @@ public class ActivityMain extends ActionBarActivity {
     public ArrayList<Message> rows;
     private AQuery aq;
     private Menu menu;
-    private MenuItem refreshItem;
     private Settings settings;
+
+    private SwipeRefreshLayout swipeLayout;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -51,6 +53,12 @@ public class ActivityMain extends ActionBarActivity {
 
         messageList = (ListView) findViewById(R.id.messageList);
         messageAdapter = new MessageAdapter(this, rows);
+
+        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.refresh);
+        swipeLayout.setOnRefreshListener(this);
+        swipeLayout.setColorScheme(R.color.cool_green);
+
+
         Utils.addMenuButton(this);
     }
 
@@ -58,7 +66,6 @@ public class ActivityMain extends ActionBarActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         this.menu = menu;
         getMenuInflater().inflate(R.menu.main_menu, menu);
-        refreshItem = menu.findItem(R.id.action_refresh);
 
         if (settings.getHash() == null) {
             settings.setEmail(Utils.generateRandomEmail(this));
@@ -77,9 +84,6 @@ public class ActivityMain extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_refresh:
-                reloadList();
-                return true;
             case R.id.action_copy:
                 Utils.copyToClipboard(this, settings.getEmail());
                 return true;
@@ -103,7 +107,6 @@ public class ActivityMain extends ActionBarActivity {
     }
 
     public void reloadList() {
-            updateRefreshState(true);
             aq.progress(this).ajax(getCallBack(this, settings.getHash()));
         }
 
@@ -130,25 +133,13 @@ public class ActivityMain extends ActionBarActivity {
             AQUtility.debug("error List parser", s);
             aq.ajaxCancel();
         }
-        updateRefreshState(false);
+        swipeLayout.setRefreshing(false);
     }
 
-    private void updateRefreshState(boolean refresh) {
-
-        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        ImageView iv = (ImageView) inflater.inflate(R.layout.action_refresh, null);
-        Animation rotation = AnimationUtils.loadAnimation(this, R.anim.refresh);
-        rotation.setRepeatCount(Animation.INFINITE);
-        if (refresh) {
-            iv.startAnimation(rotation);
-            refreshItem.setActionView(iv);
-        } else {
-            refreshItem.getActionView().clearAnimation();
-            refreshItem.setActionView(null);
-        }
-
+    @Override
+    public void onRefresh() {
+        reloadList();
     }
-
 }
 
 
