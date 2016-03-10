@@ -5,7 +5,7 @@ package com.unlogicon.tempmail;
  */
 public class Constants {
 
-    public static  String BASE_URL = "http://api.temp-mail.ru/request";
+    public static  String BASE_URL = "https://api.temp-mail.ru/request";
     public static  String REQUEST_DOMAINS = BASE_URL + "/domains";
     public static  String REQUEST_MAIL = BASE_URL + "/mail/id/";
     public static  String FORMAT_JSON = "/format/json/";
